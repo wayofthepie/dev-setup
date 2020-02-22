@@ -11,14 +11,16 @@ set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set number
 
+let cfg_path="~/.config/nvim/"
+
 " load plugins
-source plugins.vim
+execute "source" cfg_path . "plugins.vim"
 " load custom commands
-source commands.vim
+execute "source" cfg_path . "commands.vim"
 " load theme config
-source theme.vim 
+execute "source" cfg_path . "theme.vim"
 " load terminal config
-source terminal.vim 
+execute "source" cfg_path . "terminal.vim"
 
 au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
