@@ -11,7 +11,8 @@
     "typescriptreact",
     "json",
     "jsonc",
-    "rust"
+    "rust",
+    "yaml"
   ],
   "yaml.format.enable": true,
   "codeLens.enable": true,
