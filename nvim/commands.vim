@@ -6,9 +6,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :general commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader>ei :e ~/.config/nvim/init.vim<CR> 
+nnoremap <silent> <leader>ec :e ~/.config/nvim/coc-settings.json<CR> 
 nnoremap <A-r> :so ~/.config/nvim/init.vim<CR> 
 
-" Use K for show documentation in preview window
+" Use K for show documEntation in preview window
 function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
