@@ -1,12 +1,13 @@
 {
   /* "coc.preferences.hoverTarget": "echo", */
   /* "coc.preferences.enableFloatHighlight": false, */
-  "rust-analyzer.raLspServerPath": "/home/chaospie/.cargo/bin/ra_lsp_server",
+  /*  "rust-analyzer.raLspServerPath": "/home/chaospie/.cargo/bin/ra_lsp_server", */
   "prettier.formatterPriority": 100,
   "suggest.detailMaxLength": 200,
   "coc.preferences.formatOnType": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
+    "javascript",
     "typescript",
     "typescriptreact",
     "json",
@@ -41,14 +42,6 @@
       "command": "gopls",
       "filetypes": ["go"],
       "rootPatterns": ["go.mod", ".git/"]
-    },
-    "dart": {
-      "command": "dart",
-      "args": [
-        "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
-        "--lsp"
-      ],
-      "filetypes": ["dart"]
     },
     "ccls": {
       "command": "ccls",

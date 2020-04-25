@@ -11,6 +11,9 @@ set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set number
 
+" dont add comments on new line if adding newline from comments
+set formatoptions-=cro
+
 let cfg_path="~/.config/nvim/"
 
 " load plugins
@@ -26,6 +29,7 @@ au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " By default the leader key is \ just setting this so I remember!
 let mapleader="\\"
+           
+" Don't auto wrap commit messages
+" au FileType gitcommit :GoyoEnter
 
-" Markdown settings
-let g:mkdp_auto_start = 1

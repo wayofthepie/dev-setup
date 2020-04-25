@@ -1,7 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom commands 
-" To search use :vimgrep /"\s:.*/ %
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" To search use :vimgrep /"\s:.*/ % """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :general commands
@@ -27,9 +26,11 @@ nnoremap <silent> <leader>c :bdelete<CR>
 nnoremap <silent> <leader>co :copen<CR>
 nnoremap <silent> <leader>cn :cnext<CR>
 nnoremap <silent> <leader>cp :cprevious<CR>
+nnoremap <silent> <leader>cx :cclose<CR>
 nnoremap <silent> <leader>lo :lopen<CR>
 nnoremap <silent> <leader>ln :lnext<CR>
 nnoremap <silent> <leader>lb :lprevious<CR>
+nnoremap <silent> <leader>lx :lclose<CR>
 nmap <silent> <leader>s :w<CR>
 
 " " Copy to clipboard
@@ -44,8 +45,15 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-autocmd CursorHold * if ! coc#util#has_float() | call CocActionAsync('doHover') | endif
+" autocmd CursorHold * if ! coc#util#has_float() | call CocActionAsync('doHover') | endif
 autocmd BufRead,BufNewFile *.yaml,*.yml set shiftwidth=2
+autocmd BufRead,BufNewFile *.ts,*.tsx,*.js,*.jsx set shiftwidth=2
+
+" coc-explorer
+nmap <space>e :CocCommand explorer<CR>
+
+" context sensitive action
+"nnoremap <leader>a :CocAction<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -55,11 +63,16 @@ autocmd BufRead,BufNewFile *.yaml,*.yml set shiftwidth=2
 com! FormatJSON %!python -m json.tool
 set wildignore +=target/**,.git/**
 com! Todo :vimgrep /\<TODO\>/j **/*
-com! Commit !git commit
 
 nnoremap <silent> <leader>do :Todo<CR>:copen<CR>
 
-let $FZF_DEFAULT_COMMAND = "rg --files --no-ignore-vcs --iglob '!target' --iglob '!.git' --hidden" 
+let $FZF_DEFAULT_COMMAND = 'rg --files 
+  \ --no-ignore-vcs 
+  \ --iglob "!target" 
+  \ --iglob "!node_modules" 
+  \ --iglob "!.git" 
+  \ --hidden' 
+
 " find files
 nnoremap <silent> <leader>f :FZF<CR>
 
@@ -71,7 +84,7 @@ nnoremap <silent> <leader>f :FZF<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " toggle terminal on/off (neovim)
-nnoremap <C-l> :call TermToggle(30)<CR>
+nnoremap <C-l> :call TermToggle(20)<CR>
 inoremap <C-l> <Esc>:call TermToggle(30)<CR>
 tnoremap <C-l> <C-\><C-n>:call TermToggle(30)<CR>
 
@@ -95,12 +108,14 @@ nmap <silent> <leader>lf <Plug>(coc-references)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>a  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+nmap <leader>dn <Plug>(coc-diagnostic-next)
+nmap <leader>dp <Plug>(coc-diagnostic-prev)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -109,6 +124,7 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 " :vim-fugitive
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -124,7 +140,12 @@ let g:coc_snippet_prev = '<c-j>'
 " rust specific commands
 nnoremap <silent> <leader>ru :CocCommand rust-analyzer.reload <CR> 
 " find functions in current file, opens in :copen
-nnoremap <silent> <leader>lf :vimgrep /fn .*/ %<CR>
+nnoremap <silent> <leader>rf :vimgrep /fn .*/ %<CR>
+nnoremap <silent> <leader>rp :vimgrep /pub .*/ %<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader>mp :MarkdownPreview<CR>

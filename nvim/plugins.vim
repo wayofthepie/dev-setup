@@ -17,11 +17,12 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer'
+Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 " End Coc extensions
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -52,6 +53,10 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'cespare/vim-toml'
 
 Plug 'LnL7/vim-nix'
+
+Plug 'junegunn/goyo.vim'
+
+Plug 'itspriddle/vim-shellcheck'
 call plug#end()
 
 
