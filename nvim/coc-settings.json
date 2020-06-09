@@ -10,12 +10,16 @@
     "javascript",
     "typescript",
     "typescriptreact",
+    "java",
     "json",
     "jsonc",
+    "python",
     "rust",
     "yaml"
   ],
   "yaml.format.enable": true,
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "python.jediEnabled": false,
   "codeLens.enable": true,
   "codeLens.separator": "~",
   "diagnostic.virtualText": true,
@@ -58,6 +62,5 @@
       "args": ["start"],
       "ignoredRootPaths": ["~"]
     }
-  },
-  "java.format.settings.url": "/home/chaospie/.vim/plugged/redhat.java/eclipse-formatter.xml"
+  }
 }

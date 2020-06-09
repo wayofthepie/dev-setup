@@ -46,8 +46,7 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " autocmd CursorHold * if ! coc#util#has_float() | call CocActionAsync('doHover') | endif
-autocmd BufRead,BufNewFile *.yaml,*.yml set shiftwidth=2
-autocmd BufRead,BufNewFile *.ts,*.tsx,*.js,*.jsx set shiftwidth=2
+autocmd BufRead,BufNewFile *.yaml,*.yml,*.java,*.ts,*.tsx,*.js,*.jsx set shiftwidth=2
 
 " coc-explorer
 nmap <space>e :CocCommand explorer<CR>
@@ -110,7 +109,7 @@ nmap <silent> <leader>lf <Plug>(coc-references)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
-nmap <leader>a  <Plug>(coc-codeaction)
+nmap <leader>a  <Plug>(coc-codeaction-selected)<CR>
 nmap <leader>al  <Plug>(coc-codelens-action)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
