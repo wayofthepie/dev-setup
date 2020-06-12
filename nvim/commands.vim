@@ -83,9 +83,9 @@ nnoremap <silent> <leader>f :FZF<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " toggle terminal on/off (neovim)
-nnoremap <C-l> :call TermToggle(20)<CR>
-inoremap <C-l> <Esc>:call TermToggle(30)<CR>
-tnoremap <C-l> <C-\><C-n>:call TermToggle(30)<CR>
+" nnoremap <C-l> :call TermToggle(20)<CR>
+" inoremap <C-l> <Esc>:call TermToggle(30)<CR>
+" tnoremap <C-l> <C-\><C-n>:call TermToggle(30)<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
