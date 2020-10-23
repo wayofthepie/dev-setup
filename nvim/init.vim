@@ -29,7 +29,10 @@ au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " By default the leader key is \ just setting this so I remember!
 let mapleader="\\"
-           
+
+"let g:dart_format_on_save = 1          
+"let g:dart_style_guide = 2
 " Don't auto wrap commit messages
 " au FileType gitcommit :GoyoEnter
 
+let g:lsc_enable_autocomplete = v:false
