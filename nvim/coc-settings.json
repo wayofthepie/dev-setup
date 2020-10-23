@@ -1,9 +1,6 @@
 {
   /* "coc.preferences.hoverTarget": "echo", */
-  /* "coc.preferences.enableFloatHighlight": false, */
-  /*  "rust-analyzer.raLspServerPath": "/home/chaospie/.cargo/bin/ra_lsp_server", */
-  "prettier.formatterPriority": 100,
-  "suggest.detailMaxLength": 200,
+  /* "coc.preferences.enableFloatHighlight": false,*/
   "coc.preferences.formatOnType": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
@@ -15,13 +12,21 @@
     "jsonc",
     "python",
     "rust",
-    "yaml"
+    "yaml",
+    "c",
+    "dart"
   ],
-  "yaml.format.enable": true,
-  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-  "python.jediEnabled": false,
   "codeLens.enable": true,
   "codeLens.separator": "~",
+  "flutter.trace.server": "verbose",
+  "flutter.lsp.debug": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "prettier.formatterPriority": 100,
+  "suggest.detailMaxLength": 200,
+  "yaml.format.enable": true,
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "python.jediEnabled": false,
   "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": true,
   "signature.target": "echo",
@@ -42,19 +47,6 @@
       /* yarn global add markdownlint-cli */
       "command": "efm-langserver",
       "filetypes": ["markdown"]
-    },
-    "gopls": {
-      "command": "gopls",
-      "filetypes": ["go"],
-      "rootPatterns": ["go.mod", ".git/"]
-    },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": ["compile_commands.json", ".ccls", ".root", ".git/"],
-      "initializationOptions": {
-        "cacheDirectory": "/tmp/ccls"
-      }
     },
     "bash": {
       "command": "bash-language-server",
