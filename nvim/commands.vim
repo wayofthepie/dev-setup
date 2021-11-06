@@ -2,11 +2,16 @@
 " Custom commands 
 " To search use :vimgrep /"\s:.*/ % """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :general commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>ei :e ~/.config/nvim/init.vim<CR> 
 nnoremap <silent> <leader>ec :e ~/.config/nvim/coc-settings.json<CR> 
+nnoremap <silent> <leader>ep :e ~/.config/nvim/plugins.vim<CR> 
+nnoremap <silent> <leader>eco :e ~/.config/nvim/commands.vim<CR> 
 nnoremap <A-r> :so ~/.config/nvim/init.vim<CR> 
 
 " Use K for show documEntation in preview window
@@ -61,7 +66,7 @@ nmap <space>e :CocCommand explorer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 com! FormatJSON %!python -m json.tool
 set wildignore +=target/**,.git/**
-com! Todo :vimgrep /\<TODO\>/j **/*
+com! Todo :vimgrep /\<TODO\>/j `git ls-files` 
 
 nnoremap <silent> <leader>do :Todo<CR>:copen<CR>
 
@@ -70,6 +75,14 @@ let $FZF_DEFAULT_COMMAND = 'rg --files
   \ --iglob "!target" 
   \ --iglob "!node_modules" 
   \ --iglob "!.git" 
+  \ --iglob "!bin/" 
+  \ --iglob "!build" 
+  \ --iglob "!gradle" 
+  \ --iglob "!.gradle" 
+  \ --iglob "!.settings" 
+  \ --iglob "!*.class" 
+  \ --iglob "!__pycache__" 
+  \ --iglob "!.pytest_cache" 
   \ --hidden' 
 
 " find files
@@ -106,10 +119,10 @@ nmap <silent> <leader>li <Plug>(coc-implementation)
 nmap <silent> <leader>lf <Plug>(coc-references)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-cursor)
 
 " Remap for do codeAction of current line
-nmap <leader>a  <Plug>(coc-codeaction-selected)<CR>
+"nmap <leader>a  <Plug>(coc-codeaction-line)<CR>
 nmap <leader>al  <Plug>(coc-codelens-action)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
@@ -132,8 +145,8 @@ nnoremap <silent> <leader>gc :Gcommit<CR>
 " :rust
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <silent> <leader>fo :call CocActionAsync('format')<CR>
-nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
-nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
+nnoremap <expr><C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <expr><C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 let g:coc_snippet_next = '<c-k>'
 let g:coc_snippet_prev = '<c-j>'

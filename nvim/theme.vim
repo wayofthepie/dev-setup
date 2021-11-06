@@ -37,4 +37,3 @@ let g:airline#extensions#tabline#ignore_bufadd_pat =
 
 set timeoutlen=600
 
-
