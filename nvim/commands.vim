@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custom commands 
+" Custom commands
 " To search use :vimgrep /"\s:.*/ % """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remove trailing whitespace on save
@@ -8,11 +8,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :general commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>ei :e ~/.config/nvim/init.vim<CR> 
-nnoremap <silent> <leader>ec :e ~/.config/nvim/coc-settings.json<CR> 
-nnoremap <silent> <leader>ep :e ~/.config/nvim/plugins.vim<CR> 
-nnoremap <silent> <leader>eco :e ~/.config/nvim/commands.vim<CR> 
-nnoremap <A-r> :so ~/.config/nvim/init.vim<CR> 
+nnoremap <silent> <leader>ei :e ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>ec :e ~/.config/nvim/coc-settings.json<CR>
+nnoremap <silent> <leader>ep :e ~/.config/nvim/plugins.vim<CR>
+nnoremap <silent> <leader>eco :e ~/.config/nvim/commands.vim<CR>
+nnoremap <A-r> :so ~/.config/nvim/init.vim<CR>
 
 " Use K for show documEntation in preview window
 function! s:show_documentation()
@@ -66,24 +66,24 @@ nmap <space>e :CocCommand explorer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 com! FormatJSON %!python -m json.tool
 set wildignore +=target/**,.git/**
-com! Todo :vimgrep /\<TODO\>/j `git ls-files` 
+com! Todo :vimgrep /\<TODO\>/j `git ls-files`
 
 nnoremap <silent> <leader>do :Todo<CR>:copen<CR>
 
-let $FZF_DEFAULT_COMMAND = 'rg --files 
-  \ --no-ignore-vcs 
-  \ --iglob "!target" 
-  \ --iglob "!node_modules" 
-  \ --iglob "!.git" 
-  \ --iglob "!bin/" 
-  \ --iglob "!build" 
-  \ --iglob "!gradle" 
-  \ --iglob "!.gradle" 
-  \ --iglob "!.settings" 
-  \ --iglob "!*.class" 
-  \ --iglob "!__pycache__" 
-  \ --iglob "!.pytest_cache" 
-  \ --hidden' 
+let $FZF_DEFAULT_COMMAND = 'rg --files
+  \ --no-ignore-vcs
+  \ --iglob "!target"
+  \ --iglob "!node_modules"
+  \ --iglob "!.git"
+  \ --iglob "!/bin/"
+  \ --iglob "!build"
+  \ --iglob "!gradle"
+  \ --iglob "!.gradle"
+  \ --iglob "!.settings"
+  \ --iglob "!*.class"
+  \ --iglob "!__pycache__"
+  \ --iglob "!.pytest_cache"
+  \ --hidden'
 
 " find files
 nnoremap <silent> <leader>f :FZF<CR>
@@ -136,8 +136,8 @@ nmap <leader>dp <Plug>(coc-diagnostic-prev)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :vim-fugitive
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gs :Git<CR>
+nnoremap <silent> <leader>gc :Git commit<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -148,10 +148,12 @@ nmap <silent> <leader>fo :call CocActionAsync('format')<CR>
 nnoremap <expr><C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <expr><C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
+nnoremap <silent> <leader>es :CocCommand snippets.editSnippets<CR>
+
 let g:coc_snippet_next = '<c-k>'
 let g:coc_snippet_prev = '<c-j>'
 " rust specific commands
-nnoremap <silent> <leader>ru :CocCommand rust-analyzer.reload <CR> 
+nnoremap <silent> <leader>ru :CocCommand rust-analyzer.reload <CR>
 " find functions in current file, opens in :copen
 nnoremap <silent> <leader>rf :vimgrep /fn .*/ %<CR>
 nnoremap <silent> <leader>rp :vimgrep /pub .*/ %<CR>

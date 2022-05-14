@@ -16,7 +16,6 @@ set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 autocmd FileType tf set tabstop=2 shiftwidth=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2
 autocmd FileType dockerfile set tabstop=2 shiftwidth=2
-
 autocmd FileType snippets set tabstop=4
 
 " dont add comments on new line if adding newline from comments
@@ -33,11 +32,12 @@ execute "source" cfg_path . "theme.vim"
 execute "source" cfg_path . "terminal.vim"
 
 au BufNewFile,BufRead *.tsx set filetype=typescriptreact
+au BufNewFile,BufRead *.pkr.hcl set filetype=tf
 
 " By default the leader key is \ just setting this so I remember!
 let mapleader="\\"
 
-"let g:dart_format_on_save = 1          
+"let g:dart_format_on_save = 1
 "let g:dart_style_guide = 2
 " Don't auto wrap commit messages
 " au FileType gitcommit :GoyoEnter
@@ -60,7 +60,7 @@ let g:iris_imap_port  = 993
 let g:iris_imap_login = "wayofthepie@gmail.com" "Default to g:iris_mail
 let g:iris_imap_passwd_filepath = "/home/chaospie/.iris-email/iris-smtp-pass.gpg"
 
-" for sass support 
+" for sass support
 autocmd FileType scss setl iskeyword+=@-@
 
 " fix paste issue, bracketed paste mode

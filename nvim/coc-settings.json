@@ -1,75 +1,113 @@
 {
-  /* "coc.preferences.hoverTarget": "echo", */
-  "coc.preferences.enableFloatHighlight": false,
-  "coc.preferences.formatOnType": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "html",
-    "css",
-    "scss",
-    "sass",
-    "go",
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "java",
-    "json",
-    "jsonc",
-    "python",
-    "rust",
-    "yaml",
-    "dart",
-    "c",
-    "sql"
-  ],
-  "clangd.arguments": ["-fallback-style=LLVM"],
-  "codeLens.enable": false,
-  "codeLens.separator": "~",
-  "flutter.trace.server": "verbose",
-  "flutter.lsp.debug": true,
-  "rust-analyzer.checkOnSave.command": "clippy",
-  "rust-analyzer.updates.channel": "stable",
-  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-  "rust-analyzer.procMacro.enable": true,
-  "rust-analyzer.diagnostics.disabled": ["unresolved-import"],
-  "prettier.formatterPriority": 100,
-  "suggest.detailMaxLength": 200,
-  "yaml.format.enable": true,
-  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-  "java.errors.incompleteClasspath.severity": "ignore",
-  "python.jediEnabled": false,
-  "diagnostic.virtualText": true,
-  "diagnostic.checkCurrentLine": true,
-  "signature.target": "echo",
-  "sql.formatOptions": "postgresql",
-  "sql.database": "postgresql",
-  "snippets.extends": {
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
-  },
-  "suggest.noselect": false,
-  "list.normalMappings": {
-    "<C-c>": "do:exit"
-  },
-  "list.insertMappings": {
-    "<C-c>": "do:exit"
-  },
-  "languageserver": {
-    "efm": {
-      /* go get github.com/mattn/efm-langserver/cmd/efm-langserver */
-      /* yarn global add markdownlint-cli */
-      "command": "efm-langserver",
-      "filetypes": ["markdown"]
+    "coc.preferences.enableFloatHighlight": false,
+    "coc.preferences.formatOnType": false,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "html",
+        "css",
+        "scss",
+        "sass",
+        "go",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "java",
+        "json",
+        "jsonc",
+        "python",
+        "rust",
+        "yaml",
+        "dart",
+        "c",
+        "sql"
+    ],
+    "clangd.arguments": [
+        "-fallback-style=LLVM"
+    ],
+    "codeLens.enable": false,
+    "codeLens.separator": "~",
+    "flutter.trace.server": "verbose",
+    "flutter.lsp.debug": true,
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "rust-analyzer.updates.channel": "stable",
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-import"
+    ],
+    "prettier.formatterPriority": 100,
+    "suggest.detailMaxLength": 200,
+    "yaml.format.enable": true,
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": ".github/workflows/*"
     },
-    "bash": {
-      "command": "bash-language-server",
-      "filetypes": ["sh"],
-      "args": ["start"],
-      "ignoredRootPaths": ["~"]
+    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "python.jediEnabled": false,
+    "diagnostic.virtualText": true,
+    "diagnostic.checkCurrentLine": true,
+    "signature.target": "echo",
+    "sql.formatOptions": "postgresql",
+    "sql.database": "postgresql",
+    "snippets.extends": {
+        "javascriptreact": [
+            "javascript"
+        ],
+        "typescript": [
+            "javascript"
+        ]
     },
-    "haskell": {
-      "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
-      "filetypes": ["haskell", "lhaskell"]
+    "suggest.noselect": false,
+    "list.normalMappings": {
+        "<C-c>": "do:exit"
+    },
+    "list.insertMappings": {
+        "<C-c>": "do:exit"
+    },
+    "languageserver": {
+        "efm": {
+            "command": "efm-langserver",
+            "filetypes": [
+                "markdown"
+            ]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "filetypes": [
+                "sh"
+            ],
+            "args": [
+                "start"
+            ],
+            "ignoredRootPaths": [
+                "~"
+            ]
+        },
+        "haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": [
+                "--lsp"
+            ],
+            "filetypes": [
+                "haskell",
+                "lhaskell"
+            ]
+        },
+        "terraform": {
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {
+                "experimentalFeatures": {
+                    "prefillRequiredFields": true
+                }
+            },
+            "settings": {}
+        }
     }
-  }
 }
