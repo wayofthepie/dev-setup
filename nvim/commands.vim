@@ -9,9 +9,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " :general commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>ei :e ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>ec :e ~/.config/nvim/coc-settings.json<CR>
+nnoremap <silent> <leader>ecs :e ~/.config/nvim/coc-settings.json<CR>
 nnoremap <silent> <leader>ep :e ~/.config/nvim/plugins.vim<CR>
-nnoremap <silent> <leader>eco :e ~/.config/nvim/commands.vim<CR>
+nnoremap <silent> <leader>ec :e ~/.config/nvim/commands.vim<CR>
 nnoremap <A-r> :so ~/.config/nvim/init.vim<CR>
 
 " Use K for show documEntation in preview window
@@ -64,9 +64,9 @@ nmap <space>e :CocCommand explorer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :custom commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-com! FormatJSON %!python -m json.tool
+com! FormatJSON %!python -m json.tool --indent 2
 set wildignore +=target/**,.git/**
-com! Todo :vimgrep /\<TODO\>/j `git ls-files`
+com! Todo :vimgrep TODO `git ls-files`
 
 nnoremap <silent> <leader>do :Todo<CR>:copen<CR>
 
@@ -163,4 +163,10 @@ nnoremap <silent> <leader>rp :vimgrep /pub .*/ %<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>mp :MarkdownPreview<CR>
+nnoremap <silent> <leader>mp :CocCommand markdown-preview-enhanced.openPreview<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :fixes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fix enter for autocomplete selection
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"

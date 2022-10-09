@@ -28,6 +28,11 @@ Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
 Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ansible
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'yaegassy/coc-ansible', {'do': 'yarn install --frozen-lockfile'}
+let g:coc_filetype_map = { 'yaml.ansible': 'ansible' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rust
@@ -80,8 +85,8 @@ Plug 'LnL7/vim-nix'
 " markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/goyo.vim'
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'weirongxu/coc-markdown-preview-enhanced', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'weirongxu/coc-webview', { 'do': 'yarn install --frozen-lockfile' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shell
@@ -116,3 +121,19 @@ call plug#end()
 " dotnet
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plug 'coc-extensions/coc-omnisharp'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" terraform
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'hashivim/vim-terraform'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" octave
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'jvirtanen/vim-octave'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" other
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'sheerun/vim-polyglot'
+

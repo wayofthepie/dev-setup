@@ -1,113 +1,114 @@
 {
-    "coc.preferences.enableFloatHighlight": false,
-    "coc.preferences.formatOnType": false,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "html",
-        "css",
-        "scss",
-        "sass",
-        "go",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "java",
-        "json",
-        "jsonc",
-        "python",
-        "rust",
-        "yaml",
-        "dart",
-        "c",
-        "sql"
+  "coc.preferences.enableFloatHighlight": false,
+  "coc.preferences.formatOnType": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html",
+    "css",
+    "scss",
+    "sass",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "java",
+    "json",
+    "jsonc",
+    "python",
+    "rust",
+    "yaml",
+    "dart",
+    "c",
+    "sql",
+    "terraform"
+  ],
+  "webview.colorStrategy": "dark",
+  "clangd.arguments": [
+    "-fallback-style=LLVM"
+  ],
+  "codeLens.enable": false,
+  "codeLens.separator": "~",
+  "flutter.trace.server": "verbose",
+  "flutter.lsp.debug": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.updates.channel": "stable",
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.diagnostics.disabled": [
+    "unresolved-import"
+  ],
+  "prettier.formatterPriority": 100,
+  "suggest.detailMaxLength": 200,
+  "yaml.format.enable": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*"
+  },
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": true,
+  "signature.target": "echo",
+  "sql.formatOptions": "postgresql",
+  "sql.database": "postgresql",
+  "snippets.extends": {
+    "javascriptreact": [
+      "javascript"
     ],
-    "clangd.arguments": [
-        "-fallback-style=LLVM"
-    ],
-    "codeLens.enable": false,
-    "codeLens.separator": "~",
-    "flutter.trace.server": "verbose",
-    "flutter.lsp.debug": true,
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "rust-analyzer.updates.channel": "stable",
-    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-    "rust-analyzer.procMacro.enable": true,
-    "rust-analyzer.diagnostics.disabled": [
-        "unresolved-import"
-    ],
-    "prettier.formatterPriority": 100,
-    "suggest.detailMaxLength": 200,
-    "yaml.format.enable": true,
-    "yaml.schemas": {
-        "https://json.schemastore.org/github-workflow.json": ".github/workflows/*"
+    "typescript": [
+      "javascript"
+    ]
+  },
+  "suggest.noselect": false,
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
+  "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "filetypes": [
+        "markdown"
+      ]
     },
-    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "python.jediEnabled": false,
-    "diagnostic.virtualText": true,
-    "diagnostic.checkCurrentLine": true,
-    "signature.target": "echo",
-    "sql.formatOptions": "postgresql",
-    "sql.database": "postgresql",
-    "snippets.extends": {
-        "javascriptreact": [
-            "javascript"
-        ],
-        "typescript": [
-            "javascript"
-        ]
+    "bash": {
+      "command": "bash-language-server",
+      "filetypes": [
+        "sh"
+      ],
+      "args": [
+        "start"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
     },
-    "suggest.noselect": false,
-    "list.normalMappings": {
-        "<C-c>": "do:exit"
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ]
     },
-    "list.insertMappings": {
-        "<C-c>": "do:exit"
-    },
-    "languageserver": {
-        "efm": {
-            "command": "efm-langserver",
-            "filetypes": [
-                "markdown"
-            ]
-        },
-        "bash": {
-            "command": "bash-language-server",
-            "filetypes": [
-                "sh"
-            ],
-            "args": [
-                "start"
-            ],
-            "ignoredRootPaths": [
-                "~"
-            ]
-        },
-        "haskell": {
-            "command": "haskell-language-server-wrapper",
-            "args": [
-                "--lsp"
-            ],
-            "filetypes": [
-                "haskell",
-                "lhaskell"
-            ]
-        },
-        "terraform": {
-            "command": "terraform-ls",
-            "args": [
-                "serve"
-            ],
-            "filetypes": [
-                "terraform",
-                "tf"
-            ],
-            "initializationOptions": {
-                "experimentalFeatures": {
-                    "prefillRequiredFields": true
-                }
-            },
-            "settings": {}
-        }
+    "terraform": {
+      "command": "terraform-ls",
+      "args": [
+        "serve"
+      ],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {
+      },
+      "settings": {}
     }
+  },
+  "markdown-preview-enhanced.previewTheme": "github-dark.css"
 }

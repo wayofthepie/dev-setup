@@ -14,7 +14,11 @@ set list listchars=tab:»\ ,trail:·,extends:»,precedes:«
 " Kernel dev
 "autocmd FileType c set tabstop=8 shiftwidth=8
 autocmd FileType tf set tabstop=2 shiftwidth=2
+autocmd FileType terraform set tabstop=2 shiftwidth=2
+autocmd FileType sh set tabstop=2 shiftwidth=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2
+autocmd FileType hcl set tabstop=2 shiftwidth=2
+"autocmd FileType yaml set ft=yaml.ansible
 autocmd FileType dockerfile set tabstop=2 shiftwidth=2
 autocmd FileType snippets set tabstop=4
 
@@ -32,7 +36,7 @@ execute "source" cfg_path . "theme.vim"
 execute "source" cfg_path . "terminal.vim"
 
 au BufNewFile,BufRead *.tsx set filetype=typescriptreact
-au BufNewFile,BufRead *.pkr.hcl set filetype=tf
+"au BufNewFile,BufRead *.pkr.hcl set filetype=tf
 
 " By default the leader key is \ just setting this so I remember!
 let mapleader="\\"
