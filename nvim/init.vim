@@ -72,3 +72,8 @@ set t_BE=
 
 " this does not seem to install right with vim plugged
 let g:coc_global_extensions=[ 'coc-omnisharp' ]
+
+" rust-analyzer
+"For Types hint
+hi default CocInlayHint ctermfg=10 ctermbg=10 guifg=#4E81AC
+
