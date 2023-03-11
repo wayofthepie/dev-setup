@@ -4,12 +4,12 @@ execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
-set t_Co=256
-set t_ut=
-let g:airline_theme='onedark'
+"set t_Co=256
+"set t_ut=
+"let g:airline_theme='onedark'
 " let g:codedark_conservative = 1
-set termguicolors     " enable true colors support
-colorscheme codedark
+"set termguicolors     " enable true colors support
+"colorscheme codedark
 
 " Allow comments in json Coc config
 augroup fix_jsonc
